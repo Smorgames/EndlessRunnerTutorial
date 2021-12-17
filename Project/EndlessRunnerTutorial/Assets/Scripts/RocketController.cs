@@ -26,6 +26,14 @@ public class RocketController : MonoBehaviour
 
     public void TakeDamage()
     {
-        
+        _currentHP--;
+
+        if (_currentHP <= 0)
+            Death();
+    }
+
+    private void Death()
+    {
+        Destroy(gameObject);
     }
 }
