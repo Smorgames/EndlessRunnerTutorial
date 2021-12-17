@@ -5,6 +5,8 @@ public class RocketController : MonoBehaviour
     [SerializeField] private Vector3 _moveOffset;
     [SerializeField] private float _moveSpeed = 100f;
     
+    [SerializeField] private int _currentHP = 3;
+    
     private Vector2 _targetPosition;
 
     private void Start()
@@ -20,5 +22,10 @@ public class RocketController : MonoBehaviour
             _targetPosition = transform.position - _moveOffset;
         if (Input.GetKeyDown(KeyCode.RightArrow))
             _targetPosition = transform.position + _moveOffset;
+    }
+
+    public void TakeDamage()
+    {
+        
     }
 }

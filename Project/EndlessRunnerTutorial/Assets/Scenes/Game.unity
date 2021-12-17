@@ -427,6 +427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveOffset: {x: 2, y: 0, z: 0}
   _moveSpeed: 100
+  _currentHP: 3
 --- !u!1 &882981649
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,5 +9,13 @@ public class MeteorMovement : MonoBehaviour
 
     private void Update() => transform.Translate(_speed * Time.deltaTime * _direction, Space.World);
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        var rocket = other.GetComponent<RocketController>();
+
+        if (rocket != null) 
+            rocket.TakeDamage();
+    }
+
     public static void SetSpeed(float speed) => _speed = speed;
 }
