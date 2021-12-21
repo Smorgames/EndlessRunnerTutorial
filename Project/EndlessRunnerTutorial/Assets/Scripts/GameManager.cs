@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static int Score { get { return _score; } }
-    private static int _score;
+    [SerializeField] private GameUIManager _gameUIManager;
+    
+    public int Score { get { return _score; } }
+    private int _score;
 
     private readonly string _bestScoreID = "BestScore";
 
@@ -18,5 +20,10 @@ public class GameManager : MonoBehaviour
     public void IncreaseScore()
     {
         _score++;
+    }
+
+    public void LoseGame()
+    {
+        _gameUIManager.Lose();
     }
 }

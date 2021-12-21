@@ -44,6 +44,8 @@ public class Rocket : MonoBehaviour
     private void Death()
     {
         _gameManager.SaveBestScore();
+        FindObjectOfType<AudioManager>().Lose();
+        _gameManager.LoseGame();
         Destroy(gameObject);
     }
 }

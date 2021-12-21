@@ -18,6 +18,8 @@ public class Meteor : MonoBehaviour
     private void Death()
     {
         Explode();
+        Camera.main.GetComponent<MainCamera>().ShakeCamera();
+        FindObjectOfType<AudioManager>().Boom();
         Destroy(gameObject);
     }
 
