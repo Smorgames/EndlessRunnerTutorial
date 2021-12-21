@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class MeteorSpawner : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> _meteorSetPrefabs;
+    public List<GameObject> MeteorSetPrefabs;
     
     private float _spawnInterval = 1f;
     private float _counter;
+    
     private readonly float _deltaDecreaseTime = 0.05f;
     private readonly float _minSpawnTime = 0.455f;
 
@@ -26,8 +27,8 @@ public class MeteorSpawner : MonoBehaviour
 
     private void SpawnMeteorSet()
     {
-        var randomIndex = Random.Range(0, _meteorSetPrefabs.Count);
-        var meteorSet = _meteorSetPrefabs[randomIndex];
+        var randomIndex = Random.Range(0, MeteorSetPrefabs.Count);
+        var meteorSet = MeteorSetPrefabs[randomIndex];
         Instantiate(meteorSet, transform.position, Quaternion.identity);
     }
 }

@@ -4,7 +4,8 @@ public class RandomMeteorSpawner : MonoBehaviour
 {
     private void Awake()
     {
-        var meteor = Instantiate(RandomMeteorFromPrefabStorage(), transform.position, Quaternion.identity);
+        var randomMeteorPrefab = RandomMeteorFromPrefabStorage();
+        var meteor = Instantiate(randomMeteorPrefab, transform.position, Quaternion.identity);
         meteor.transform.parent = transform;
     }
 

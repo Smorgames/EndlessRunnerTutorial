@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9137571533657805998}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: AudioManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef3990aa773d60949925f2b27c653a23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _boom: {fileID: 9137571533689111133}
-  _lose: {fileID: 9137571534534402408}
-  _mainTheme: {fileID: 9137571534974227651}
+  BoomAudioSource: {fileID: 9137571533689111133}
+  LoseAudioSource: {fileID: 9137571534534402408}
+  MainThemeAudioSource: {fileID: 9137571534974227651}
 --- !u!1 &9137571533689111131
 GameObject:
   m_ObjectHideFlags: 0

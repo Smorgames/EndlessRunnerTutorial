@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameUIManager _gameUIManager;
+    public GameUIManager GameUIManager;
     
     public int Score { get { return _score; } }
     private int _score;
@@ -24,6 +24,6 @@ public class GameManager : MonoBehaviour
 
     public void LoseGame()
     {
-        _gameUIManager.Lose();
+        GameUIManager.Lose();
     }
 }

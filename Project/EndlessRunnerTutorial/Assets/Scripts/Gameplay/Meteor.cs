@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Meteor : MonoBehaviour
 {
-    [SerializeField] private GameObject _explosionPrefab;
+    public GameObject ExplosionPrefab;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -18,13 +18,13 @@ public class Meteor : MonoBehaviour
     private void Death()
     {
         Explode();
-        Camera.main.GetComponent<MainCamera>().ShakeCamera();
-        FindObjectOfType<AudioManager>().Boom();
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MainCamera>().ShakeCamera();
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().Boom();
         Destroy(gameObject);
     }
 
     private void Explode()
     {
-        Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+        Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
     }
 }

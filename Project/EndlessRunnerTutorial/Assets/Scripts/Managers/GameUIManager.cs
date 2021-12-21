@@ -4,11 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class GameUIManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _scoreTMP;
-    [SerializeField] private TextMeshProUGUI _healthPointTMP;
-
-    [SerializeField] private GameObject _pausePanel;
-    [SerializeField] private GameObject _deathPanel;
+    public TextMeshProUGUI ScoreTMP;
+    public TextMeshProUGUI HealthPointTMP;
+    public GameObject PausePanel;
+    public GameObject DeathPanel;
 
     private Rocket _rocket;
     private GameManager _gameManager;
@@ -21,14 +20,14 @@ public class GameUIManager : MonoBehaviour
 
     private void Update()
     {
-        _scoreTMP.text = $"{_gameManager.Score}";
-        _healthPointTMP.text = $"{_rocket.CurrentHealthPoint}";
+        ScoreTMP.text = $"{_gameManager.Score}";
+        HealthPointTMP.text = $"{_rocket.CurrentHealthPoint}";
     }
 
     public void Lose()
     {
         Time.timeScale = 0f;
-        _deathPanel.SetActive(true);
+        DeathPanel.SetActive(true);
     }
 
     public void Restart()
@@ -40,13 +39,13 @@ public class GameUIManager : MonoBehaviour
     public void Pause()
     {
         Time.timeScale = 0f;
-        _pausePanel.SetActive(true);
+        PausePanel.SetActive(true);
     }
 
     public void Continue()
     {
         Time.timeScale = 1f;
-        _pausePanel.SetActive(false);
+        PausePanel.SetActive(false);
     }
 
     public void BackToMenu()

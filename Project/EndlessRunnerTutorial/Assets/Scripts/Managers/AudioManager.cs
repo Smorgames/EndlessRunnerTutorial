@@ -1,13 +1,10 @@
-using System;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource _boom;
-    [SerializeField] private AudioSource _lose;
-    [SerializeField] private AudioSource _mainTheme;
-
-    private AudioSource _audioSource;
+    public AudioSource BoomAudioSource;
+    public AudioSource LoseAudioSource;
+    public AudioSource MainThemeAudioSource;
 
     private void Awake()
     {
@@ -21,16 +18,16 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        _mainTheme.Play();
+        MainThemeAudioSource.Play();
     }
 
     public void Boom()
     {
-        _boom.Play();
+        BoomAudioSource.Play();
     }
 
     public void Lose()
     {
-        _lose.Play();
+        LoseAudioSource.Play();
     }
 }

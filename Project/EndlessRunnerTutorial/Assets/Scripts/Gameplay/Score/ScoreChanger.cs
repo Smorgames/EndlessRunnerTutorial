@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ScoreHandler : MonoBehaviour
+public class ScoreChanger : MonoBehaviour
 {
     private GameManager _gameManager;
 

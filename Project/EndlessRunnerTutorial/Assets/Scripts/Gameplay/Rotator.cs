@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class Rotator : MonoBehaviour
 {
-    [SerializeField] private float _minRotationSpeed;
-    [SerializeField] private float _maxRotationSpeed;
+    public float MinRotationSpeed = -180f;
+    public float MaxRotationSpeed = 180f;
 
     private float _rotationSpeed;
 
     private void Start()
     {
-        _rotationSpeed = Random.Range(_minRotationSpeed, _maxRotationSpeed);
+        _rotationSpeed = Random.Range(MinRotationSpeed, MaxRotationSpeed);
     }
 
     private void Update()
