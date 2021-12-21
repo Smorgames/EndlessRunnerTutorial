@@ -5,15 +5,20 @@ public class MeteorSpawner : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _meteorSetPrefabs;
     
-    public static float SpawnInterval = 1.23f;
+    private float _spawnInterval = 1f;
     private float _counter;
-    
+    private readonly float _deltaDecreaseTime = 0.05f;
+    private readonly float _minSpawnTime = 0.455f;
+
     private void Update()
     {
         _counter += Time.deltaTime;
 
-        if (_counter >= SpawnInterval)
+        if (_counter >= _spawnInterval)
         {
+            if (_spawnInterval > _minSpawnTime)
+                _spawnInterval -= _deltaDecreaseTime;
+            
             SpawnMeteorSet();
             _counter = 0f;
         }
@@ -25,6 +30,4 @@ public class MeteorSpawner : MonoBehaviour
         var meteorSet = _meteorSetPrefabs[randomIndex];
         Instantiate(meteorSet, transform.position, Quaternion.identity);
     }
-
-    public static void SetSpawnInterval(float spawnInterval) => SpawnInterval = spawnInterval;
 }

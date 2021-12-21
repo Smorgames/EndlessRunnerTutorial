@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class ScoreHandler : MonoBehaviour
 {
-    public static int Score { get; private set; }
+    private GameManager _gameManager;
 
+    private void Start()
+    {
+        _gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+    }
+    
     private void OnTriggerExit2D(Collider2D other)
     {
-        var rocket = other.GetComponent<RocketController>();
+        var rocket = other.GetComponent<Rocket>();
 
         if (rocket != null)
         {
-            Score++;
+            _gameManager.IncreaseScore();
             Destroy(gameObject);
         }
     }

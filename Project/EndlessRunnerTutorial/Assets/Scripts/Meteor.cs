@@ -6,7 +6,7 @@ public class Meteor : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var rocket = other.GetComponent<RocketController>();
+        var rocket = other.GetComponent<Rocket>();
 
         if (rocket != null)
         {
