@@ -43,3 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc21da5de3e53cf4b961321e46032d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Meteors:
+  - {fileID: 3886985654702894686, guid: b6e43053b5d2c7045842a17b9b5ea670, type: 3}
+  - {fileID: 2733545288352954362, guid: d1efad4290bfe984d8dee3a290f51695, type: 3}
+  - {fileID: 2352766354215105951, guid: eadcc6b0be8651949829cecdcb3692e0, type: 3}
+  - {fileID: 3714527308168266964, guid: ef5063203e02eae41b4d9cd07c841465, type: 3}
+  - {fileID: 2257145999706415305, guid: d7af15ba2a0a7184a9326c13330d258d, type: 3}
